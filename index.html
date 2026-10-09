@@ -4,323 +4,275 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#ffe5ef">
+<meta name="theme-color" content="#ffe7f0">
 <title>Ahsen Nevnihal ♡ Berk Can</title>
 <style>
-:root{
-  --pink:#e778a0;
-  --deep:#b94d78;
-  --text:#81415a;
-  --paper:#fffafd;
-}
+:root{--pink:#e77da3;--deep:#bd507e;--text:#80465d;--cream:#fffafd}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
-  margin:0;
-  color:var(--text);
-  font-family:Georgia,"Times New Roman",serif;
-  text-align:center;
-  background:
-    radial-gradient(ellipse at top,#fffafd 0%,transparent 65%),
-    linear-gradient(145deg,#fff5f9,#ffdce9,#fff0f6);
-  min-height:100vh;
-  overflow-x:hidden;
+ margin:0;color:var(--text);text-align:center;
+ font-family:Georgia,"Times New Roman",serif;
+ background:linear-gradient(145deg,#fff7fa,#ffdfeb,#fff2f7);
+ min-height:100vh;overflow-x:hidden
 }
 button{
-  font:inherit;
-  border:0;
-  border-radius:28px;
-  padding:14px 23px;
-  background:linear-gradient(135deg,#f19abc,#d96391);
-  color:white;
-  cursor:pointer;
-  box-shadow:0 6px 18px #cf699133;
-  transition:transform .2s;
+ border:0;border-radius:28px;padding:14px 22px;
+ color:white;background:linear-gradient(135deg,#f1a1bd,#d75f91);
+ font:inherit;font-size:16px;cursor:pointer;
+ box-shadow:0 5px 16px #bd507e24;
+ transition:transform .2s
 }
 button:hover{transform:translateY(-2px)}
-button:focus-visible,input:focus-visible,textarea:focus-visible{
-  outline:3px solid #bd4e7d;outline-offset:3px
+button:focus-visible,a:focus-visible,textarea:focus-visible{
+ outline:3px solid #bd507e;outline-offset:3px
 }
-h1{color:#bf527e;font-size:clamp(31px,8vw,49px)}
-h2{color:#c15b83}
+h1{font-size:clamp(32px,8vw,49px);color:var(--deep)}
+h2{color:#c15a83}
 p{line-height:1.85}
-a{color:#b94d78}
+.bow{font-size:52px;animation:bob 2.5s ease-in-out infinite}
+.lace{
+ border-block:1px dashed #e8a3bc;
+ padding:9px;margin:15px 0;color:#d8759b;letter-spacing:5px
+}
+#intro{min-height:100vh;min-height:100svh;display:grid;place-items:center;padding:20px}
+.paper,.card{
+ width:min(92%,650px);margin:22px auto;padding:27px 21px;
+ background:#fffafdf0;border:1px solid #f1bfd1;border-radius:25px;
+ box-shadow:0 14px 38px #b84c7510
+}
+.paper{padding:32px 23px}
+#main{display:none;padding:25px 0 45px}
+.big{font-size:clamp(27px,7vw,42px);font-weight:bold;color:#d24e87;overflow-wrap:anywhere}
 .small{font-size:12px;opacity:.8}
-.bow{
-  font-size:52px;
-  animation:bob 2.5s ease-in-out infinite;
-}
-#intro{
-  min-height:100svh;
-  display:grid;
-  place-items:center;
-  padding:22px;
-}
-.paper{
-  width:min(100%,650px);
-  padding:30px 22px;
-  background:#fffafdeF;
-  border:1px solid #f4bfd2;
-  border-radius:28px;
-  box-shadow:0 16px 55px #b84c751a;
-}
-#main{display:none;padding:28px 0 55px}
-.card{
-  width:min(92%,650px);
-  margin:22px auto;
-  padding:26px 21px;
-  background:var(--paper);
-  border:1px solid #f2bfd2;
-  border-radius:25px;
-  box-shadow:0 12px 35px #b84c7510;
-}
-.big{
-  color:#d54f88;
-  font-size:clamp(27px,7vw,43px);
-  font-weight:bold;
-  overflow-wrap:anywhere;
-}
-.ribbon{color:#d65d91;font-size:23px;letter-spacing:5px}
 #letter{
-  width:100%;
-  min-height:230px;
-  padding:16px;
-  border:1px solid #edb5ca;
-  border-radius:16px;
-  background:#fff6fa;
-  color:#81415a;
-  font:16px/1.9 Georgia,serif;
-  text-align:left;
-  resize:vertical;
+ width:100%;min-height:300px;padding:15px;
+ border:1px solid #edb5ca;border-radius:15px;
+ background:#fff6fa;color:var(--text);
+ font:16px/1.9 Georgia,serif;resize:vertical
 }
-.gallery{
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:12px;
-}
+.gallery{display:grid;grid-template-columns:1fr;gap:15px}
 .photo{
-  min-height:145px;
-  padding:8px;
-  background:#fff;
-  border:1px solid #f1c2d4;
-  border-radius:17px;
-  box-shadow:0 5px 15px #a94c6d12;
+ margin:0;padding:9px;background:white;border:1px solid #f1c2d4;
+ border-radius:17px;box-shadow:0 6px 17px #a94c6d12
 }
 .photo img{
-  display:block;
-  width:100%;
-  height:190px;
-  object-fit:cover;
-  border-radius:11px;
+ display:block;width:100%;height:260px;object-fit:cover;
+ border-radius:11px;background:#fff0f6
 }
-.photo figcaption{padding:9px 2px 3px;font-size:13px}
-.music-note{font-size:35px;animation:bob 2s infinite}
-#player{width:100%;margin-top:15px}
-#player iframe{width:100%;max-width:420px;border:0;border-radius:14px}
-.hearts{
-  position:fixed;bottom:-45px;pointer-events:none;z-index:10;
-  animation:floatUp linear forwards;
-}
-@keyframes floatUp{
-  to{transform:translateY(-115vh) rotate(35deg);opacity:0}
-}
-@keyframes bob{
-  50%{transform:translateY(-7px) rotate(3deg)}
-}
+.photo figcaption{padding:10px 2px;font-size:14px}
+#player iframe{width:100%;max-width:430px;border:0;border-radius:14px}
 .choices{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
-#answer{min-height:30px;color:#c34f81;font-weight:bold}
+#answer{min-height:45px;color:#c34f81;font-weight:bold}
+.heart{
+ position:fixed;bottom:-45px;pointer-events:none;z-index:10;
+ animation:floatUp linear forwards
+}
 footer{padding:25px 12px;color:#a95778}
-@media(min-width:560px){
-  .gallery{grid-template-columns:repeat(3,minmax(0,1fr))}
-  .photo img{height:220px}
+a{color:#b94d78}
+@keyframes floatUp{
+ to{transform:translateY(-115vh) rotate(35deg);opacity:0}
+}
+@keyframes bob{50%{transform:translateY(-7px) rotate(3deg)}}
+@media(min-width:600px){
+ .gallery{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .photo img{height:220px}
 }
 @media(prefers-reduced-motion:reduce){
-  *,*::before,*::after{animation:none!important;scroll-behavior:auto!important}
+ *,*::before,*::after{animation:none!important;scroll-behavior:auto!important}
 }
 </style>
 </head>
 <body>
 
 <section id="intro">
-  <div class="paper">
-    <div class="bow">🎀</div>
-    <div class="ribbon">♡ ୨୧ ♡</div>
-    <p>Kalbimin en tatlı sahibine...</p>
-    <h1>Ahsen Nevnihal</h1>
-    <p>Sana minicik bir dünya hazırladım.<br>
-    İçinde biraz pembe, biraz kalp ve kocaman bir sevgi var. 💗</p>
-    <button id="open">Sürprizini aç ♡</button>
-    <p class="small">Berk Can'dan, bütün sevgisiyle...</p>
-  </div>
+ <div class="paper">
+  <div class="bow">🎀</div>
+  <div class="lace">♡ ୨୧ ♡ ୨୧ ♡</div>
+  <p>Kalbimin en güzel yerine...</p>
+  <h1>Ahsen Nevnihal</h1>
+  <p>Sana özel, sevgiyle hazırlanmış minicik bir dünya. 💗</p>
+  <p>Her köşesinde senden bir parça, her kalbinde sana sevgim var.</p>
+  <button id="open">Sürprizini aç ♡</button>
+  <div class="lace">♡ ୨୧ ♡</div>
+  <p class="small">Seni çok seven Berk Can'dan...</p>
+ </div>
 </section>
 
 <main id="main">
-  <div class="bow">🎀 💗 🎀</div>
-  <div class="ribbon">୨୧ ♡ ୨୧</div>
-  <h1>Ahsen'im...</h1>
-  <p>Bu küçücük sayfanın her köşesi sana ait. ♡</p>
+ <div class="bow">🎀 💗 🎀</div>
+ <div class="lace">୨୧ ♡ ୨୧</div>
+ <h1>Ahsen'im ♡</h1>
+ <p>Bu sayfa sadece sana söylemek istediğim güzel şeylerle dolu.</p>
 
-  <section class="card">
-    <div class="bow">💌</div>
-    <p>Bunu sana söylemeden duramıyorum...</p>
-    <div class="big">AŞIĞIM SANAAAAAAA</div>
-    <p>Hem de her harfiyle, her zerremle! 💗</p>
-  </section>
+ <section class="card">
+  <div class="bow">💌</div>
+  <p>Sana söyleyeceklerimin en kısası...</p>
+  <div class="big">AŞIĞIM SANAAAAAAA</div>
+  <p>Hem de öyle böyle değil, kocaman! ❤️</p>
+ </section>
 
-  <section class="card">
-    <h2>♡ Sana mektubum ♡</h2>
-    <div style="font-size:28px">🌷 💌 🌷</div>
-    <textarea id="letter">Güzelim Ahsen Nevnihal'im,
+ <section class="card">
+  <h2>Kalbimden sana bir mektup 💌</h2>
+  <div class="lace">🌷 ♡ 🌷</div>
+  <textarea id="letter" aria-label="Ahsen'e aşk mektubu">Güzelim Ahsen Nevnihal'im,
 
-Bazen sana olan sevgimi anlatmak istiyorum ama
-kelimeler hissettiklerimin yanında minicik kalıyor.
+Bazen sana olan sevgimi anlatmaya çalışıyorum ama
+kelimeler kalbimden geçenlerin yanında çok küçük kalıyor.
+Sana söylemek istediğim o kadar çok şey var ki...
 
 Seninle konuşmak, sesini duymak, gülüşünü düşünmek
-bile yüzümde kocaman bir gülümseme oluşturuyor.
-Günün nasıl geçerse geçsin, seni düşünmek içimi
-ısıtan en güzel şeylerden biri.
+bile günümü güzelleştirebiliyor. Bazen küçücük bir sözün,
+bazen aklıma gelişin yüzümde kocaman bir gülümseme
+oluşturuyor. Farkında mısın bilmiyorum ama benim için
+çok özel birisin.
 
-Belki bu sadece küçücük bir internet sayfası,
-ama içindeki sevgi hiç de küçük değil.
-Her kalbi, her rengi, her kelimeyi senin için seçtim.
+Bu sayfayı hazırlarken her renginde seni düşündüm.
+Her kalbinde sana olan sevgimi, her fiyonkta biraz
+tatlılığını, her kelimesinde de sana söylemek istediklerimi
+hayal ettim. Belki bir internet sayfası bu, ama benim için
+içine sevgimi sığdırmaya çalıştığım küçük bir dünya.
 
-Sana her baktığımda yeniden iyi ki diyorum.
-İyi ki varsın, iyi ki hayatımdasın, iyi ki benim
-kalbimde böylesine güzel bir yerin var.
+Seninle daha nice güzel anılar biriktirmek, birlikte
+gülmek, bazen saçmalamak, birbirimize destek olmak ve
+en sıradan günleri bile güzel hatıralara dönüştürmek
+istiyorum. Çünkü bazen mutluluk büyük şeylerde değil,
+sevdiğin insanın hayatında olmasında saklı.
 
-Ve sakın unutma:
-AŞIĞIM SANAAAAAAA! ❤️
+Sana her şeyi mükemmel yapacağıma söz veremem ama
+seni önemsemeye, seni dinlemeye ve yüzünde bir
+gülümseme oluşturmak için çabalamaya söz verebilirim.
+Umarım bu küçük sürpriz sana kendini ne kadar özel
+hissetmeni istediğimi anlatır.
+
+İyi ki varsın Ahsen'im.
+İyi ki seni tanımışım.
+İyi ki kalbimde böylesine güzel bir yerin var.
+
+Ve tekrar, bağıra bağıra söylüyorum:
+
+AŞIĞIM SANAAAAAAA! 💗
 
 Seni çok seven,
 Berk Can ♡</textarea>
-    <p class="small">Bu metni düzenleyebilirsin. Buradaki değişiklikler internete otomatik kaydedilmez.</p>
-  </section>
+  <p class="small">Bu mektubu düzenleyebilirsin. Buradaki değişiklikler siteye otomatik kaydedilmez.</p>
+ </section>
 
-  <section class="card">
-    <h2>Bizim küçük dünyamız 📸</h2>
-    <p>Her fotoğraf ayrı bir anı, her anı ayrı bir mutluluk. 💕</p>
-    <div class="gallery">
-      <figure class="photo">
-        <img src="foto1.jpg" alt="Birlikte güzel bir anımız"
-             onerror="this.style.display='none'">
-        <figcaption>En güzel anılarımız ♡</figcaption>
-      </figure>
-      <figure class="photo">
-        <img src="foto2.jpg" alt="Güzel bir hatıramız"
-             onerror="this.style.display='none'">
-        <figcaption>Seninle her şey güzel 🎀</figcaption>
-      </figure>
-      <figure class="photo">
-        <img src="foto3.jpg" alt="Birlikte bir başka anımız"
-             onerror="this.style.display='none'">
-        <figcaption>Biriktireceğimiz nice anılara 💗</figcaption>
-      </figure>
-    </div>
-    <p class="small">Fotoğrafları eklemek için aşağıdaki yönergeleri izle.</p>
-  </section>
+ <section class="card">
+  <h2>Bizim küçük fotoğraf albümümüz 📸</h2>
+  <p>Seninle biriken anılar, kalbimde sakladığım güzellikler. 💕</p>
+  <div class="gallery">
+   <figure class="photo">
+    <img src="./foto1.jpg" alt="Birlikte güzel bir anımız">
+    <figcaption>Birlikte en güzel hâlimiz ♡</figcaption>
+   </figure>
+   <figure class="photo">
+    <img src="./foto2.jpg" alt="Tatlı bir hatıramız">
+    <figcaption>Seninle her şey daha güzel 🎀</figcaption>
+   </figure>
+   <figure class="photo">
+    <img src="./foto3.jpg" alt="Biriktirdiğimiz anılar">
+    <figcaption>Nice güzel anılara, sevgilim 💗</figcaption>
+   </figure>
+  </div>
+  <p class="small">Fotoğraflarını aşağıdaki adımlarla ekleyebilirsin.</p>
+ </section>
 
-  <section class="card">
-    <div class="music-note">🎶</div>
-    <h2>Bizim şarkımız</h2>
-    <p>Bu şarkı çalarken aklına ben geleyim, olur mu? 💗</p>
-    <div id="player">
-      <p class="small">Şarkı yüklenince burada görünecek.</p>
-    </div>
-    <button id="music">♫ Şarkıyı oynat</button>
-    <p class="small">Müzik otomatik başlamazsa bu butona bas.</p>
-    <p><a href="https://www.youtube.com/watch?v=o8PWMvjwURw"
-      target="_blank" rel="noopener">Şarkıyı YouTube'da aç ↗</a></p>
-  </section>
+ <section class="card">
+  <div class="bow">🎶</div>
+  <h2>Bizim şarkımız</h2>
+  <p>Şimdi bu şarkı çalarken beni hatırla, olur mu? 💗</p>
+  <div id="player">
+   <p class="small">Şarkı, sürprizi açtığında burada başlayacak.</p>
+  </div>
+  <button id="music">♫ Şarkıyı yeniden aç</button>
+  <p class="small">Tarayıcı otomatik oynatmayı engellerse butona bas.</p>
+  <p><a href="https://www.youtube.com/watch?v=o8PWMvjwURw" target="_blank" rel="noopener">YouTube'da dinle ↗</a></p>
+ </section>
 
-  <section class="card">
-    <div class="bow">💞</div>
-    <h2>Sana bir sorum var, güzelim...</h2>
-    <p>Benimle daha nice güzel anı biriktirir misin?</p>
-    <div class="choices">
-      <button id="yes">Her zaman! 💗</button>
-      <button id="also">Sonsuza kadar! 🎀</button>
-    </div>
-    <p id="answer" aria-live="polite"></p>
-  </section>
+ <section class="card">
+  <div class="bow">💞</div>
+  <h2>Sana minicik bir sorum var...</h2>
+  <p>Benimle daha nice güzel anı biriktirir misin, Ahsen'im?</p>
+  <div class="choices">
+   <button id="yes">Tabii ki! 💗</button>
+   <button id="forever">Sonsuza kadar! 🎀</button>
+  </div>
+  <p id="answer" aria-live="polite"></p>
+ </section>
 
-  <section class="card">
-    <div class="bow">🎀 💖 🎀</div>
-    <h2>Ve son olarak...</h2>
-    <div class="big">SENİ ÇOK SEVİYORUM!</div>
-    <p>Bugün, yarın ve sana söylemek isteyeceğim daha nice gün boyunca.</p>
-    <p>Ahsen Nevnihal'ime,<br>hep sevgisiyle, Berk Can ♡</p>
-    <button id="rain">Kalp yağmuru başlat 💗</button>
-  </section>
-  <footer>Sen + Ben = ♡<br>En tatlı hikâyemiz daha yeni başlıyor.</footer>
+ <section class="card">
+  <div class="bow">🎀 💖 🎀</div>
+  <h2>Son bir şey daha...</h2>
+  <div class="big">SENİ ÇOK SEVİYORUM!</div>
+  <p>Bugün, yarın ve birlikte yaşayacağımız nice güzel günde...</p>
+  <p>Ahsen Nevnihal'ime,<br>hep sevgisiyle, Berk Can ♡</p>
+  <button id="rain">Kalp yağmuru gönder 💗</button>
+ </section>
+ <footer>Sen + Ben = ♡<br>Hikâyemizin en güzel sayfaları daha yazılmadı. 🎀</footer>
 </main>
 
 <script>
-const intro = document.getElementById('intro');
-const main = document.getElementById('main');
-const player = document.getElementById('player');
-let playerCreated = false;
+const intro=document.getElementById('intro');
+const main=document.getElementById('main');
+const player=document.getElementById('player');
+let musicStarted=false;
 
-function makeHearts(count=24){
-  const symbols=['💗','💕','💖','♡','🎀','💘'];
-  for(let i=0;i<count;i++){
-    const el=document.createElement('span');
-    el.className='hearts';
-    el.textContent=symbols[Math.floor(Math.random()*symbols.length)];
-    el.style.left=Math.random()*100+'vw';
-    el.style.fontSize=(17+Math.random()*22)+'px';
-    el.style.animationDuration=(4+Math.random()*4)+'s';
-    document.body.appendChild(el);
-    setTimeout(()=>el.remove(),8500);
-  }
+function heartRain(count=30){
+ const symbols=['💗','💕','💖','♡','🎀','💘'];
+ for(let i=0;i<count;i++){
+  const h=document.createElement('span');
+  h.className='heart';
+  h.textContent=symbols[Math.floor(Math.random()*symbols.length)];
+  h.style.left=Math.random()*100+'vw';
+  h.style.fontSize=(18+Math.random()*22)+'px';
+  h.style.animationDuration=(4+Math.random()*4)+'s';
+  document.body.appendChild(h);
+  setTimeout(()=>h.remove(),8500);
+ }
 }
 
-function startMusic(){
-  if(playerCreated){
-    const frame=player.querySelector('iframe');
-    if(frame){
-      frame.contentWindow.postMessage(
-        JSON.stringify({event:'command',func:'playVideo',args:''}),
-        'https://www.youtube-nocookie.com'
-      );
-    }
-    return;
+function playSong(){
+ if(musicStarted){
+  const frame=player.querySelector('iframe');
+  if(frame){
+   frame.contentWindow.postMessage(
+    JSON.stringify({event:'command',func:'playVideo',args:''}),
+    'https://www.youtube-nocookie.com'
+   );
   }
-  playerCreated=true;
-  player.replaceChildren();
-  const frame=document.createElement('iframe');
-  frame.src='https://www.youtube-nocookie.com/embed/o8PWMvjwURw?autoplay=1&playsinline=1&rel=0&enablejsapi=1';
-  frame.title='Berk Can ve Ahsen Nevnihal için şarkı';
-  frame.height='100';
-  frame.allow='autoplay; encrypted-media; picture-in-picture';
-  frame.allowFullscreen=true;
-  player.appendChild(frame);
+  return;
+ }
+ musicStarted=true;
+ player.replaceChildren();
+ const frame=document.createElement('iframe');
+ frame.src='https://www.youtube-nocookie.com/embed/o8PWMvjwURw?autoplay=1&playsinline=1&rel=0&enablejsapi=1';
+ frame.title='Ahsen ve Berk Can için şarkı';
+ frame.height='110';
+ frame.allow='autoplay; encrypted-media; picture-in-picture';
+ frame.allowFullscreen=true;
+ player.appendChild(frame);
 }
 
 document.getElementById('open').addEventListener('click',()=>{
-  intro.style.display='none';
-  main.style.display='block';
-  window.scrollTo(0,0);
-  makeHearts(35);
-  startMusic();
+ intro.style.display='none';
+ main.style.display='block';
+ window.scrollTo(0,0);
+ heartRain(35);
+ playSong();
 });
+document.getElementById('music').addEventListener('click',playSong);
+document.getElementById('rain').addEventListener('click',()=>heartRain(65));
 
-document.getElementById('music').addEventListener('click',()=>{
-  startMusic();
-});
-
-document.getElementById('rain').addEventListener('click',()=>{
-  makeHearts(65);
-});
-
-function answer(text){
-  document.getElementById('answer').textContent=text;
-  makeHearts(35);
-}
 document.getElementById('yes').addEventListener('click',()=>{
-  answer('O zaman daha yazılacak çok güzel hikâyemiz var! Seni seviyorum Ahsen! 💗');
+ document.getElementById('answer').textContent=
+ 'O zaman daha yazılacak çok güzel hikâyemiz var! Seni seviyorum Ahsen! 💗';
+ heartRain(35);
 });
-document.getElementById('also').addEventListener('click',()=>{
-  answer('Sonsuza kadar el ele, kalp kalbe... İyi ki varsın! 🎀❤️');
+document.getElementById('forever').addEventListener('click',()=>{
+ document.getElementById('answer').textContent=
+ 'Sonsuza kadar el ele, kalp kalbe... İyi ki varsın! 🎀❤️';
+ heartRain(35);
 });
 </script>
 </body>
