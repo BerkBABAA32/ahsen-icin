@@ -1,0 +1,141 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ahsen Nevnihal'e, Berk Can'dan 💗</title>
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;background:linear-gradient(135deg,#fff2f7,#ffd6e7,#fff8fb);
+ color:#984564;font-family:Georgia,serif;text-align:center;
+ min-height:100vh;overflow-x:hidden
+}
+button{border:0;border-radius:30px;padding:14px 25px;
+ background:#df78a0;color:white;font-size:17px;cursor:pointer}
+.card{background:#fffafcdd;border:1px solid #f4b9d0;
+ border-radius:25px;padding:25px 20px;margin:22px auto;
+ width:min(92%,620px);box-shadow:0 10px 30px #a94a6b12}
+h1{color:#c44f80;font-size:clamp(30px,8vw,45px)}
+h2{color:#c44f80}
+.bow{font-size:55px;animation:bob 2s infinite}
+.big{font-size:clamp(28px,7vw,42px);color:#db5289}
+#main{display:none;padding:25px 0 45px}
+textarea{width:100%;min-height:150px;padding:12px;
+ border:1px solid #edb4ca;border-radius:14px;background:#fff7fa;
+ color:#984564;font:16px Georgia,serif}
+#photos{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+#photos img{width:44%;border-radius:15px;object-fit:cover}
+.heart{position:fixed;bottom:-30px;animation:up 5s linear forwards;
+ pointer-events:none}
+@keyframes up{to{transform:translateY(-110vh) rotate(30deg);opacity:0}}
+@keyframes bob{50%{transform:translateY(-8px)}}
+</style>
+</head>
+<body>
+<section id="welcome" style="min-height:100vh;display:grid;place-items:center;padding:20px">
+ <div class="card">
+  <div class="bow">🎀</div>
+  <p>Sana özel minicik bir dünya...</p>
+  <h1>Ahsen Nevnihal</h1>
+  <p>Bu sürpriz, seni çok seven birinden. 💗</p>
+  <button id="open">Sürprizini aç ♡</button>
+  <p style="font-size:13px">Berk Can'dan, sevgiyle...</p>
+ </div>
+</section>
+
+<main id="main">
+ <div class="bow">🎀 💗 🎀</div>
+ <h1>Ahsen'im ♡</h1>
+ <p>Bu sayfadaki her şey sana özel.</p>
+
+ <section class="card">
+  <div style="font-size:42px">💌</div>
+  <h2>Berk Can'dan sana...</h2>
+  <div class="big"><b>AŞIĞIM SANAAAAAAA</b></div>
+  <p>İyi ki varsın, iyi ki hayatımdasın.
+  Yüzünde minicik bir gülümseme olsun diye hazırladım bunu.
+  Seni çok ama çok seviyorum. ❤️</p>
+ </section>
+
+ <section class="card">
+  <h2>Sana mektubum 💌</h2>
+  <textarea>Ahsen'im,
+
+Sana olan sevgimi anlatmaya bazen kelimeler yetmiyor.
+Gülüşün, sesin ve varlığın benim için çok özel.
+
+İyi ki hayatımdasın.
+Seni çok seviyorum.
+
+Berk Can ♡</textarea>
+  <p style="font-size:12px">Mektubu burada düzenleyebilirsin; değişiklikler siteye otomatik kaydedilmez.</p>
+ </section>
+
+ <section class="card">
+  <h2>Bizden fotoğraflar 📸</h2>
+  <input id="upload" type="file" accept="image/*" multiple>
+  <div id="photos"></div>
+  <p style="font-size:12px">Fotoğraflar burada yalnızca senin tarayıcında önizlenir.</p>
+ </section>
+
+ <section class="card">
+  <h2>Bizim şarkımız 🎶</h2>
+  <p>Bu şarkı sana eşlik etsin. 💗</p>
+  <iframe id="song" width="100%" height="100"
+   style="border:0;border-radius:12px"
+   allow="autoplay; encrypted-media; picture-in-picture"
+   title="Bizim şarkımız"></iframe>
+  <p><a href="https://www.youtube.com/watch?v=o8PWMvjwURw"
+   target="_blank" rel="noopener" style="color:#c44f80">Şarkıyı YouTube'da aç ♫</a></p>
+ </section>
+
+ <section class="card">
+  <div style="font-size:42px">💞</div>
+  <h2>Unutma...</h2>
+  <div class="big">SENİ SEVİYORUM!</div>
+  <p>Ahsen Nevnihal'ime, Berk Can'dan. ♡</p>
+  <button id="hearts">Kalp yağmuru gönder 💗</button>
+ </section>
+</main>
+
+<script>
+const welcome=document.getElementById('welcome');
+const main=document.getElementById('main');
+function hearts(n){
+ for(let i=0;i<n;i++){
+  const h=document.createElement('span');
+  h.className='heart';
+  h.textContent=['💗','💕','🎀','💖'][Math.floor(Math.random()*4)];
+  h.style.left=Math.random()*100+'%';
+  h.style.fontSize=(18+Math.random()*20)+'px';
+  h.style.animationDuration=(4+Math.random()*4)+'s';
+  document.body.appendChild(h);
+  setTimeout(()=>h.remove(),8500);
+ }
+}
+document.getElementById('open').onclick=()=>{
+ welcome.style.display='none';
+ main.style.display='block';
+ document.getElementById('song').src=
+ 'https://www.youtube-nocookie.com/embed/o8PWMvjwURw?autoplay=1&playsinline=1';
+ hearts(30);
+ window.scrollTo(0,0);
+};
+document.getElementById('hearts').onclick=()=>hearts(45);
+document.getElementById('upload').onchange=e=>{
+ const box=document.getElementById('photos');
+ box.replaceChildren();
+ [...e.target.files].forEach(file=>{
+  if(file.type.startsWith('image/')){
+   const img=document.createElement('img');
+   img.alt='Fotoğrafımız';
+   img.src=URL.createObjectURL(file);
+   box.appendChild(img);
+  }
+ });
+};
+</script>
+</body>
+</html>
